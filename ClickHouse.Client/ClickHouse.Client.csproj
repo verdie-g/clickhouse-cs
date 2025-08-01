@@ -4,10 +4,10 @@
     <TargetFrameworks>net462;net48;netstandard2.1;net6.0;net8.0</TargetFrameworks>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageProjectUrl>https://github.com/DarkWanderer/ClickHouse.Client</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/DarkWanderer/ClickHouse.Client</RepositoryUrl>
-    <PackageTags>clickhouse, ado.net, client</PackageTags>
-    <Authors>Oleg Kozlyuk</Authors>
+    <PackageProjectUrl>https://github.com/ClickHouse/clickhouse-cs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ClickHouse/clickhouse-cs</RepositoryUrl>
+    <PackageTags>clickhouse;click;house;database;ado;ado.net;http;client</PackageTags>
+    <Authors>ClickHouse;Oleg Kozlyuk</Authors>
     <Description>Fast binary-over-HTTP ADO.NET provider for ClickHouse</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
