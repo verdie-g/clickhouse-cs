@@ -1,0 +1,359 @@
+ClickHouse.Driver.ADO.Adapters.ClickHouseDataAdapter
+ClickHouse.Driver.ADO.Adapters.ClickHouseDataAdapter.ClickHouseDataAdapter() -> void
+ClickHouse.Driver.ADO.ClickHouseCommand
+ClickHouse.Driver.ADO.ClickHouseCommand.ClickHouseCommand() -> void
+ClickHouse.Driver.ADO.ClickHouseCommand.ClickHouseCommand(ClickHouse.Driver.ADO.ClickHouseConnection connection) -> void
+ClickHouse.Driver.ADO.ClickHouseCommand.CreateParameter() -> ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter
+ClickHouse.Driver.ADO.ClickHouseCommand.CustomSettings.get -> System.Collections.Generic.IDictionary<string, object>
+ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteRawResultAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<ClickHouse.Driver.ADO.ClickHouseRawResult>
+ClickHouse.Driver.ADO.ClickHouseCommand.QueryId.get -> string
+ClickHouse.Driver.ADO.ClickHouseCommand.QueryId.set -> void
+ClickHouse.Driver.ADO.ClickHouseCommand.QueryStats.get -> ClickHouse.Driver.ADO.QueryStats
+ClickHouse.Driver.ADO.ClickHouseConnection
+ClickHouse.Driver.ADO.ClickHouseConnection.ClickHouseConnection() -> void
+ClickHouse.Driver.ADO.ClickHouseConnection.ClickHouseConnection(string connectionString) -> void
+ClickHouse.Driver.ADO.ClickHouseConnection.ClickHouseConnection(string connectionString, System.Net.Http.HttpClient httpClient) -> void
+ClickHouse.Driver.ADO.ClickHouseConnection.ClickHouseConnection(string connectionString, System.Net.Http.IHttpClientFactory httpClientFactory, string httpClientName = "") -> void
+ClickHouse.Driver.ADO.ClickHouseConnection.Clone() -> object
+ClickHouse.Driver.ADO.ClickHouseConnection.CreateCommand() -> ClickHouse.Driver.ADO.ClickHouseCommand
+ClickHouse.Driver.ADO.ClickHouseConnection.CustomSettings.get -> System.Collections.Generic.IDictionary<string, object>
+ClickHouse.Driver.ADO.ClickHouseConnection.Logger.get -> Microsoft.Extensions.Logging.ILogger
+ClickHouse.Driver.ADO.ClickHouseConnection.Logger.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnection.ServerTimezone.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnection.SetFormDataParameters(bool sendParametersAsFormData) -> void
+ClickHouse.Driver.ADO.ClickHouseConnection.UseCompression.get -> bool
+ClickHouse.Driver.ADO.ClickHouseConnection.UseFormDataParameters.get -> bool
+ClickHouse.Driver.ADO.ClickHouseConnectionFactory
+ClickHouse.Driver.ADO.ClickHouseConnectionFactory.ClickHouseConnectionFactory() -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.ClickHouseConnectionStringBuilder() -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.ClickHouseConnectionStringBuilder(string connectionString) -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Compression.get -> bool
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Compression.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Database.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Database.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Host.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Host.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Path.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Path.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Password.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Password.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Port.get -> ushort
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Port.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Protocol.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Protocol.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.SessionId.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.SessionId.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Timeout.get -> System.TimeSpan
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Timeout.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.UseCustomDecimals.get -> bool
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.UseCustomDecimals.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.UseServerTimezone.get -> bool
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.UseServerTimezone.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.UseSession.get -> bool
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.UseSession.set -> void
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Username.get -> string
+ClickHouse.Driver.ADO.ClickHouseConnectionStringBuilder.Username.set -> void
+ClickHouse.Driver.ADO.ClickHouseRawResult
+ClickHouse.Driver.ADO.ClickHouseRawResult.CopyToAsync(System.IO.Stream stream) -> System.Threading.Tasks.Task
+ClickHouse.Driver.ADO.ClickHouseRawResult.Dispose() -> void
+ClickHouse.Driver.ADO.ClickHouseRawResult.ReadAsByteArrayAsync() -> System.Threading.Tasks.Task<byte[]>
+ClickHouse.Driver.ADO.ClickHouseRawResult.ReadAsStreamAsync() -> System.Threading.Tasks.Task<System.IO.Stream>
+ClickHouse.Driver.ADO.ClickHouseRawResult.ReadAsStringAsync() -> System.Threading.Tasks.Task<string>
+ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.All = -1 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.AsyncInsert = 8192 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.Bool = 128 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.Date32 = 256 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.Geo = 1024 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.Map = 64 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.None = 0 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.ParamsInMultipartFormData = 32768 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.Stats = 2048 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.UUIDParameters = 32 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.Variant = 16384 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Feature.WideTypes = 512 -> ClickHouse.Driver.ADO.Feature
+ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter
+ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ClickHouseDbParameter() -> void
+ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ClickHouseType.get -> string
+ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ClickHouseType.set -> void
+ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.QueryForm.get -> string
+ClickHouse.Driver.ADO.QueryStats
+ClickHouse.Driver.ADO.QueryStats.ElapsedNs.get -> long
+ClickHouse.Driver.ADO.QueryStats.ElapsedNs.init -> void
+ClickHouse.Driver.ADO.QueryStats.QueryStats(long ReadRows, long ReadBytes, long WrittenRows, long WrittenBytes, long TotalRowsToRead, long ResultRows, long ResultBytes, long ElapsedNs) -> void
+ClickHouse.Driver.ADO.QueryStats.ReadBytes.get -> long
+ClickHouse.Driver.ADO.QueryStats.ReadBytes.init -> void
+ClickHouse.Driver.ADO.QueryStats.ReadRows.get -> long
+ClickHouse.Driver.ADO.QueryStats.ReadRows.init -> void
+ClickHouse.Driver.ADO.QueryStats.ResultBytes.get -> long
+ClickHouse.Driver.ADO.QueryStats.ResultBytes.init -> void
+ClickHouse.Driver.ADO.QueryStats.ResultRows.get -> long
+ClickHouse.Driver.ADO.QueryStats.ResultRows.init -> void
+ClickHouse.Driver.ADO.QueryStats.TotalRowsToRead.get -> long
+ClickHouse.Driver.ADO.QueryStats.TotalRowsToRead.init -> void
+ClickHouse.Driver.ADO.QueryStats.WrittenBytes.get -> long
+ClickHouse.Driver.ADO.QueryStats.WrittenBytes.init -> void
+ClickHouse.Driver.ADO.QueryStats.WrittenRows.get -> long
+ClickHouse.Driver.ADO.QueryStats.WrittenRows.init -> void
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.Current.get -> System.Data.IDataReader
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetBigInteger(int ordinal) -> System.Numerics.BigInteger
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetIPAddress(int ordinal) -> System.Net.IPAddress
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetSByte(int ordinal) -> sbyte
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetUInt16(int ordinal) -> ushort
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetUInt32(int ordinal) -> uint
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetUInt64(int ordinal) -> ulong
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.MoveNext() -> bool
+ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.Reset() -> void
+ClickHouse.Driver.ClickHouseServerException
+ClickHouse.Driver.ClickHouseServerException.ClickHouseServerException() -> void
+ClickHouse.Driver.ClickHouseServerException.ClickHouseServerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context) -> void
+ClickHouse.Driver.ClickHouseServerException.ClickHouseServerException(string error, string query, int errorCode) -> void
+ClickHouse.Driver.ClickHouseServerException.Query.get -> string
+ClickHouse.Driver.Constraints.DBDefault
+ClickHouse.Driver.Constraints.DBDefault.DBDefault() -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSize.get -> int
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSize.set -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.ClickHouseBulkCopy(ClickHouse.Driver.ADO.ClickHouseConnection connection) -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.ClickHouseBulkCopy(ClickHouse.Driver.ADO.ClickHouseConnection connection, ClickHouse.Driver.Copy.RowBinaryFormat rowBinaryFormat) -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.ClickHouseBulkCopy(string connectionString) -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.ClickHouseBulkCopy(string connectionString, ClickHouse.Driver.Copy.RowBinaryFormat rowBinaryFormat) -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.ColumnNames.get -> System.Collections.Generic.IReadOnlyCollection<string>
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.ColumnNames.init -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.DestinationTableName.get -> string
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.DestinationTableName.init -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.Dispose() -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.InitAsync() -> System.Threading.Tasks.Task
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.MaxDegreeOfParallelism.get -> int
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.MaxDegreeOfParallelism.set -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.RowsWritten.get -> long
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.WriteToServerAsync(System.Collections.Generic.IEnumerable<object[]> rows) -> System.Threading.Tasks.Task
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.WriteToServerAsync(System.Collections.Generic.IEnumerable<object[]> rows, System.Threading.CancellationToken token) -> System.Threading.Tasks.Task
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.WriteToServerAsync(System.Data.DataTable table, System.Threading.CancellationToken token) -> System.Threading.Tasks.Task
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.WriteToServerAsync(System.Data.IDataReader reader) -> System.Threading.Tasks.Task
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.WriteToServerAsync(System.Data.IDataReader reader, System.Threading.CancellationToken token) -> System.Threading.Tasks.Task
+ClickHouse.Driver.Copy.ClickHouseBulkCopySerializationException
+ClickHouse.Driver.Copy.ClickHouseBulkCopySerializationException.ClickHouseBulkCopySerializationException(object[] row, System.Exception innerException) -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopySerializationException.Row.get -> object[]
+ClickHouse.Driver.Copy.RowBinaryFormat
+ClickHouse.Driver.Copy.RowBinaryFormat.RowBinary = 0 -> ClickHouse.Driver.Copy.RowBinaryFormat
+ClickHouse.Driver.Copy.RowBinaryFormat.RowBinaryWithDefaults = 1 -> ClickHouse.Driver.Copy.RowBinaryFormat
+ClickHouse.Driver.Formats.ExtendedBinaryWriter
+ClickHouse.Driver.Formats.ExtendedBinaryWriter.ExtendedBinaryWriter(System.IO.Stream stream) -> void
+ClickHouse.Driver.Formats.ExtendedBinaryWriter.Write7BitEncodedInt(int i) -> void
+ClickHouse.Driver.IClickHouseCommand
+ClickHouse.Driver.IClickHouseCommand.CreateParameter() -> ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter
+ClickHouse.Driver.IClickHouseCommand.CustomSettings.get -> System.Collections.Generic.IDictionary<string, object>
+ClickHouse.Driver.IClickHouseCommand.ExecuteRawResultAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<ClickHouse.Driver.ADO.ClickHouseRawResult>
+ClickHouse.Driver.IClickHouseConnection
+ClickHouse.Driver.IClickHouseConnection.CreateCommand() -> ClickHouse.Driver.ADO.ClickHouseCommand
+ClickHouse.Driver.Numerics.ClickHouseDecimal
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ClickHouseDecimal() -> void
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ClickHouseDecimal(System.Numerics.BigInteger mantissa, int scale) -> void
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ClickHouseDecimal(decimal value) -> void
+ClickHouse.Driver.Numerics.ClickHouseDecimal.CompareTo(ClickHouse.Driver.Numerics.ClickHouseDecimal other) -> int
+ClickHouse.Driver.Numerics.ClickHouseDecimal.CompareTo(decimal other) -> int
+ClickHouse.Driver.Numerics.ClickHouseDecimal.CompareTo(object obj) -> int
+ClickHouse.Driver.Numerics.ClickHouseDecimal.Equals(ClickHouse.Driver.Numerics.ClickHouseDecimal other) -> bool
+ClickHouse.Driver.Numerics.ClickHouseDecimal.Floor() -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+ClickHouse.Driver.Numerics.ClickHouseDecimal.GetTypeCode() -> System.TypeCode
+ClickHouse.Driver.Numerics.ClickHouseDecimal.Mantissa.get -> System.Numerics.BigInteger
+ClickHouse.Driver.Numerics.ClickHouseDecimal.Scale.get -> int
+ClickHouse.Driver.Numerics.ClickHouseDecimal.Sign.get -> int
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToBoolean(System.IFormatProvider provider) -> bool
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToByte(System.IFormatProvider provider) -> byte
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToChar(System.IFormatProvider provider) -> char
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToDateTime(System.IFormatProvider provider) -> System.DateTime
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToDecimal(System.IFormatProvider provider) -> decimal
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToDouble(System.IFormatProvider provider) -> double
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToInt16(System.IFormatProvider provider) -> short
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToInt32(System.IFormatProvider provider) -> int
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToInt64(System.IFormatProvider provider) -> long
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToSByte(System.IFormatProvider provider) -> sbyte
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToSingle(System.IFormatProvider provider) -> float
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToString(System.IFormatProvider provider) -> string
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToString(string format, System.IFormatProvider formatProvider) -> string
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToType(System.Type conversionType, System.IFormatProvider provider) -> object
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToUInt16(System.IFormatProvider provider) -> ushort
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToUInt32(System.IFormatProvider provider) -> uint
+ClickHouse.Driver.Numerics.ClickHouseDecimal.ToUInt64(System.IFormatProvider provider) -> ulong
+ClickHouse.Driver.Numerics.ClickHouseDecimal.Truncate(int precision = 0) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+ClickHouse.Driver.Utility.CommandExtensions
+ClickHouse.Driver.Utility.CompressedContent
+ClickHouse.Driver.Utility.CompressedContent.CompressedContent(System.Net.Http.HttpContent content, System.Net.DecompressionMethods compressionMethod) -> void
+ClickHouse.Driver.Utility.ConnectionExtensions
+ClickHouse.Driver.Utility.DataReaderExtensions
+ClickHouse.Driver.Utility.DictionaryExtensions
+ClickHouse.Driver.Utility.EnumerableExtensions
+ClickHouse.Driver.Utility.MathUtils
+ClickHouse.Driver.Utility.NameValueCollectionExtensions
+ClickHouse.Driver.Utility.StringExtensions
+override ClickHouse.Driver.ADO.ClickHouseCommand.Cancel() -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.CommandText.get -> string
+override ClickHouse.Driver.ADO.ClickHouseCommand.CommandText.set -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.CommandTimeout.get -> int
+override ClickHouse.Driver.ADO.ClickHouseCommand.CommandTimeout.set -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.CommandType.get -> System.Data.CommandType
+override ClickHouse.Driver.ADO.ClickHouseCommand.CommandType.set -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.CreateDbParameter() -> System.Data.Common.DbParameter
+override ClickHouse.Driver.ADO.ClickHouseCommand.DbConnection.get -> System.Data.Common.DbConnection
+override ClickHouse.Driver.ADO.ClickHouseCommand.DbConnection.set -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.DbParameterCollection.get -> System.Data.Common.DbParameterCollection
+override ClickHouse.Driver.ADO.ClickHouseCommand.DbTransaction.get -> System.Data.Common.DbTransaction
+override ClickHouse.Driver.ADO.ClickHouseCommand.DbTransaction.set -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.DesignTimeVisible.get -> bool
+override ClickHouse.Driver.ADO.ClickHouseCommand.DesignTimeVisible.set -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.Dispose(bool disposing) -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteDbDataReader(System.Data.CommandBehavior behavior) -> System.Data.Common.DbDataReader
+override ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteDbDataReaderAsync(System.Data.CommandBehavior behavior, System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<System.Data.Common.DbDataReader>
+override ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteNonQuery() -> int
+override ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteNonQueryAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<int>
+override ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteScalar() -> object
+override ClickHouse.Driver.ADO.ClickHouseCommand.ExecuteScalarAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<object>
+override ClickHouse.Driver.ADO.ClickHouseCommand.Prepare() -> void
+override ClickHouse.Driver.ADO.ClickHouseCommand.UpdatedRowSource.get -> System.Data.UpdateRowSource
+override ClickHouse.Driver.ADO.ClickHouseCommand.UpdatedRowSource.set -> void
+override ClickHouse.Driver.ADO.ClickHouseConnection.BeginDbTransaction(System.Data.IsolationLevel isolationLevel) -> System.Data.Common.DbTransaction
+override ClickHouse.Driver.ADO.ClickHouseConnection.ChangeDatabase(string databaseName) -> void
+override ClickHouse.Driver.ADO.ClickHouseConnection.Close() -> void
+override ClickHouse.Driver.ADO.ClickHouseConnection.CreateDbCommand() -> System.Data.Common.DbCommand
+override ClickHouse.Driver.ADO.ClickHouseConnection.DataSource.get -> string
+override ClickHouse.Driver.ADO.ClickHouseConnection.Database.get -> string
+override ClickHouse.Driver.ADO.ClickHouseConnection.GetSchema() -> System.Data.DataTable
+override ClickHouse.Driver.ADO.ClickHouseConnection.GetSchema(string collectionName) -> System.Data.DataTable
+override ClickHouse.Driver.ADO.ClickHouseConnection.GetSchema(string collectionName, string[] restrictionValues) -> System.Data.DataTable
+override ClickHouse.Driver.ADO.ClickHouseConnection.Open() -> void
+override ClickHouse.Driver.ADO.ClickHouseConnection.OpenAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task
+override ClickHouse.Driver.ADO.ClickHouseConnection.ServerVersion.get -> string
+override ClickHouse.Driver.ADO.ClickHouseConnection.State.get -> System.Data.ConnectionState
+override ClickHouse.Driver.ADO.ClickHouseConnectionFactory.CreateCommand() -> System.Data.Common.DbCommand
+override ClickHouse.Driver.ADO.ClickHouseConnectionFactory.CreateConnection() -> System.Data.Common.DbConnection
+override ClickHouse.Driver.ADO.ClickHouseConnectionFactory.CreateConnectionStringBuilder() -> System.Data.Common.DbConnectionStringBuilder
+override ClickHouse.Driver.ADO.ClickHouseConnectionFactory.CreateDataAdapter() -> System.Data.Common.DbDataAdapter
+override ClickHouse.Driver.ADO.ClickHouseConnectionFactory.CreateParameter() -> System.Data.Common.DbParameter
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.DbType.get -> System.Data.DbType
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.DbType.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.Direction.get -> System.Data.ParameterDirection
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.Direction.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.IsNullable.get -> bool
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.IsNullable.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ParameterName.get -> string
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ParameterName.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ResetDbType() -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.Size.get -> int
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.Size.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.SourceColumn.get -> string
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.SourceColumn.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.SourceColumnNullMapping.get -> bool
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.SourceColumnNullMapping.set -> void
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.ToString() -> string
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.Value.get -> object
+override ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter.Value.set -> void
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.Close() -> void
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.Depth.get -> int
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.FieldCount.get -> int
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetBoolean(int ordinal) -> bool
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetByte(int ordinal) -> byte
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetBytes(int ordinal, long dataOffset, byte[] buffer, int bufferOffset, int length) -> long
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetChar(int ordinal) -> char
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetChars(int ordinal, long dataOffset, char[] buffer, int bufferOffset, int length) -> long
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetDataTypeName(int ordinal) -> string
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetDateTime(int ordinal) -> System.DateTime
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetDecimal(int ordinal) -> decimal
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetDouble(int ordinal) -> double
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetEnumerator() -> System.Collections.IEnumerator
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetFieldType(int ordinal) -> System.Type
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetFieldValue<T>(int ordinal) -> T
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetFloat(int ordinal) -> float
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetGuid(int ordinal) -> System.Guid
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetInt16(int ordinal) -> short
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetInt32(int ordinal) -> int
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetInt64(int ordinal) -> long
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetName(int ordinal) -> string
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetOrdinal(string name) -> int
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetSchemaTable() -> System.Data.DataTable
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetString(int ordinal) -> string
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetValue(int ordinal) -> object
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetValues(object[] values) -> int
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.IsClosed.get -> bool
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.IsDBNull(int ordinal) -> bool
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.NextResult() -> bool
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.NextResultAsync(System.Threading.CancellationToken cancellationToken) -> System.Threading.Tasks.Task<bool>
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.Read() -> bool
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.RecordsAffected.get -> int
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.this[int ordinal].get -> object
+override ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.this[string name].get -> object
+override ClickHouse.Driver.Numerics.ClickHouseDecimal.Equals(object obj) -> bool
+override ClickHouse.Driver.Numerics.ClickHouseDecimal.GetHashCode() -> int
+override ClickHouse.Driver.Numerics.ClickHouseDecimal.ToString() -> string
+override ClickHouse.Driver.Types.Grammar.SyntaxTreeNode.ToString() -> string
+override ClickHouse.Driver.Utility.CompressedContent.Dispose(bool disposing) -> void
+override ClickHouse.Driver.Utility.CompressedContent.SerializeToStreamAsync(System.IO.Stream stream, System.Net.TransportContext context) -> System.Threading.Tasks.Task
+override ClickHouse.Driver.Utility.CompressedContent.TryComputeLength(out long length) -> bool
+override sealed ClickHouse.Driver.ADO.ClickHouseConnection.ConnectionString.get -> string
+override sealed ClickHouse.Driver.ADO.ClickHouseConnection.ConnectionString.set -> void
+override sealed ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.HasRows.get -> bool
+static ClickHouse.Driver.ADO.ClickHouseConnectionFactory.Instance.get -> ClickHouse.Driver.ADO.ClickHouseConnectionFactory
+static ClickHouse.Driver.ClickHouseServerException.FromServerResponse(string error, string query) -> ClickHouse.Driver.ClickHouseServerException
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.MaxDivisionPrecision -> int
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.NumberOfDigits(System.Numerics.BigInteger value) -> int
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.One.get -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.Parse(string input) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.Parse(string input, System.IFormatProvider provider) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.Zero.get -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator decimal(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> decimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator double(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> double
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator float(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> float
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator int(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> int
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator long(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> long
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator uint(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> uint
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.explicit operator ulong(ClickHouse.Driver.Numerics.ClickHouseDecimal value) -> ulong
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.implicit operator ClickHouse.Driver.Numerics.ClickHouseDecimal(decimal value) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.implicit operator ClickHouse.Driver.Numerics.ClickHouseDecimal(double value) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.implicit operator ClickHouse.Driver.Numerics.ClickHouseDecimal(int value) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator !=(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> bool
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator %(ClickHouse.Driver.Numerics.ClickHouseDecimal dividend, ClickHouse.Driver.Numerics.ClickHouseDecimal divisor) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator *(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator +(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator -(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator /(ClickHouse.Driver.Numerics.ClickHouseDecimal dividend, ClickHouse.Driver.Numerics.ClickHouseDecimal divisor) -> ClickHouse.Driver.Numerics.ClickHouseDecimal
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator <(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> bool
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator <=(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> bool
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator ==(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> bool
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator >(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> bool
+static ClickHouse.Driver.Numerics.ClickHouseDecimal.operator >=(ClickHouse.Driver.Numerics.ClickHouseDecimal left, ClickHouse.Driver.Numerics.ClickHouseDecimal right) -> bool
+static ClickHouse.Driver.Types.DateTimeConversions.FromUnixTimeDays(int days) -> System.DateTime
+static ClickHouse.Driver.Types.DateTimeConversions.ToUnixTimeDays(this System.DateTimeOffset dto) -> int
+static ClickHouse.Driver.Types.Grammar.Parser.Parse(string input) -> ClickHouse.Driver.Types.Grammar.SyntaxTreeNode
+static ClickHouse.Driver.Types.Grammar.Tokenizer.GetTokens(string input) -> System.Collections.Generic.IEnumerable<string>
+static ClickHouse.Driver.Utility.CommandExtensions.AddParameter(this ClickHouse.Driver.ADO.ClickHouseCommand command, string parameterName, object parameterValue) -> ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter
+static ClickHouse.Driver.Utility.CommandExtensions.AddParameter(this ClickHouse.Driver.ADO.ClickHouseCommand command, string parameterName, string clickHouseType, object parameterValue) -> ClickHouse.Driver.ADO.Parameters.ClickHouseDbParameter
+static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteDataTable(this System.Data.Common.DbConnection connection, string sql) -> System.Data.DataTable
+static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteReaderAsync(this System.Data.Common.DbConnection connection, string sql) -> System.Threading.Tasks.Task<System.Data.Common.DbDataReader>
+static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteScalarAsync(this System.Data.Common.DbConnection connection, string sql) -> System.Threading.Tasks.Task<object>
+static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteStatementAsync(this System.Data.Common.DbConnection connection, string sql) -> System.Threading.Tasks.Task<int>
+static ClickHouse.Driver.Utility.DataReaderExtensions.GetColumnNames(this System.Data.IDataReader reader) -> string[]
+static ClickHouse.Driver.Utility.DictionaryExtensions.Set<TKey, TValue>(this System.Collections.Generic.IDictionary<TKey, TValue> dictionary, TKey key, TValue value) -> void
+static ClickHouse.Driver.Utility.DictionaryExtensions.TryAdd<TKey, TValue>(this System.Collections.Generic.IDictionary<TKey, TValue> dictionary, TKey key, TValue value) -> bool
+static ClickHouse.Driver.Utility.EnumerableExtensions.BatchRented<T>(this System.Collections.Generic.IEnumerable<T> enumerable, int batchSize) -> System.Collections.Generic.IEnumerable<(T[], int)>
+static ClickHouse.Driver.Utility.EnumerableExtensions.Deconstruct<T>(this System.Collections.Generic.IList<T> list, out T first, out T second) -> void
+static ClickHouse.Driver.Utility.EnumerableExtensions.Deconstruct<T>(this System.Collections.Generic.IList<T> list, out T first, out T second, out T third) -> void
+static ClickHouse.Driver.Utility.MathUtils.ShiftDecimalPlaces(long value, int places) -> long
+static ClickHouse.Driver.Utility.MathUtils.ToPower(int value, int power) -> long
+static ClickHouse.Driver.Utility.StringExtensions.EncloseColumnName(this string str) -> string
+static ClickHouse.Driver.Utility.StringExtensions.Escape(this string str) -> string
+static ClickHouse.Driver.Utility.StringExtensions.QuoteDouble(this string str) -> string
+static ClickHouse.Driver.Utility.StringExtensions.QuoteSingle(this string str) -> string
+static ClickHouse.Driver.Utility.StringExtensions.ReplaceMultipleWords(this string input, System.Collections.Generic.Dictionary<string, string> replacements) -> string
+static ClickHouse.Driver.Utility.StringExtensions.ToSnakeCase(this string str) -> string
+static readonly ClickHouse.Driver.Constraints.DBDefault.Value -> ClickHouse.Driver.Constraints.DBDefault
+static readonly ClickHouse.Driver.Types.DateTimeConversions.DateTimeEpochStart -> System.DateTime
+virtual ClickHouse.Driver.ADO.ClickHouseConnection.SupportedFeatures.get -> ClickHouse.Driver.ADO.Feature
+virtual ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetDateTimeOffset(int ordinal) -> System.DateTimeOffset
+﻿ClickHouse.Driver.ADO.Adapters.ClickHouseDataAdapter
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSent -> System.EventHandler<ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSentEventArgs>
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSentEventArgs
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSentEventArgs.BatchSentEventArgs(long rowsWritten) -> void
+ClickHouse.Driver.Copy.ClickHouseBulkCopy.BatchSentEventArgs.RowsWritten.get -> long

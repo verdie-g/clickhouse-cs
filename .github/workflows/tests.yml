@@ -83,7 +83,7 @@ jobs:
             8.x
 
       - name: Test
-        run: dotnet test ClickHouse.Client.IntegrationTests/ClickHouse.Client.IntegrationTests.csproj --framework net8.0 --configuration Release --verbosity normal --logger GitHubActions  /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:SkipAutoProps=true
+        run: dotnet test ClickHouse.Driver.IntegrationTests/ClickHouse.Driver.IntegrationTests.csproj --framework net8.0 --configuration Release --verbosity normal --logger GitHubActions  /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:SkipAutoProps=true
         env:
           CLICKHOUSE_CONNECTION: Host=localhost;Port=8123;Username=test;Password=test1234
           CLICKHOUSE_VERSION: latest
@@ -115,7 +115,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Test
-        run: dotnet test ClickHouse.Client.Tests/ClickHouse.Client.Tests.csproj 
+        run: dotnet test ClickHouse.Driver.Tests/ClickHouse.Driver.Tests.csproj 
               --framework net48 --configuration Release --verbosity normal --logger GitHubActions 
               /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:SkipAutoProps=true
               --filter "FullyQualifiedName ~ ADO"

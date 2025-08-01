@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "ClickHouse.Client.Benchmark": {
-      "commandName": "Project",
-      "commandLineArgs": "--filter \"*\" --inProcess --job Short --join"
-    }
-  }
-}
