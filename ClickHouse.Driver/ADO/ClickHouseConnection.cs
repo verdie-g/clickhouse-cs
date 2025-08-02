@@ -9,6 +9,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -364,7 +365,14 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
 
     internal void AddDefaultHttpHeaders(HttpRequestHeaders headers)
     {
+        string versionAndHash = Assembly
+            .GetExecutingAssembly()
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?
+            .InformationalVersion ?? "unknown";
+        string version = versionAndHash.Split('+')[0];
+
         headers.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(Encoding.UTF8.GetBytes($"{username}:{password}")));
+        headers.UserAgent.Add(new ProductInfoHeaderValue("ClickHouse.Driver", version));
         headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         headers.Accept.Add(new MediaTypeWithQualityHeaderValue("text/csv"));
         headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/octet-stream"));

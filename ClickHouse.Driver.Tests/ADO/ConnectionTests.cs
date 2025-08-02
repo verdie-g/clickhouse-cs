@@ -51,7 +51,7 @@ public class ConnectionTests : AbstractConnectionTestFixture
     public void ShouldConnectToServer()
     {
         using var connection = TestUtilities.GetTestClickHouseConnection();
-                ClassicAssert.IsNotEmpty(connection.ServerVersion);
+        ClassicAssert.IsNotEmpty(connection.ServerVersion);
         Assert.That(connection.State, Is.EqualTo(ConnectionState.Open));
         connection.Close();
         Assert.That(connection.State, Is.EqualTo(ConnectionState.Closed));
@@ -103,6 +103,15 @@ public class ConnectionTests : AbstractConnectionTestFixture
         command.QueryId = queryId;
         await command.ExecuteScalarAsync();
         Assert.That(command.QueryId, Is.EqualTo(queryId));
+    }
+    
+    [Test]
+    public async Task ClientShouldSetUserAgent()
+    {
+        var headers = new HttpRequestMessage().Headers;
+        connection.AddDefaultHttpHeaders(headers);
+        // Build assembly version defaults to 1.0.0
+        Assert.That( headers.UserAgent.ToString().Contains("ClickHouse.Driver/1.0.0"), Is.True);
     }
 
     [Test]
