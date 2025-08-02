@@ -22,13 +22,13 @@ jobs:
 
     - name: Build & pack
       id: build_pack
-      run: dotnet build ClickHouse.Client\ClickHouse.Client.csproj --configuration Release /p:Version=${{ inputs.version }}
+      run: dotnet build ClickHouse.Driver\ClickHouse.Driver.csproj --configuration Release /p:Version=${{ inputs.version }}
 
     - name: Upload package
       uses: actions/upload-artifact@v4
       with:
         name: package
-        path: ClickHouse.Client/bin/Release/ClickHouse.Client.*nupkg
+        path: ClickHouse.Driver/bin/Release/ClickHouse.Driver.*nupkg
 
   push_nuget_org:
     runs-on: windows-latest
@@ -43,7 +43,7 @@ jobs:
     - name: Push package
       id: push
       shell: cmd
-      run: dotnet nuget push ClickHouse.Client.*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push ClickHouse.Driver.*.nupkg --skip-duplicate --api-key ${{ secrets.NUGET_TOKEN }} --source https://api.nuget.org/v3/index.json
 
   github_release:
     runs-on: ubuntu-latest

@@ -54,7 +54,7 @@ jobs:
             8.x
 
       - name: Test
-        run: dotnet test ClickHouse.Client.Tests/ClickHouse.Client.Tests.csproj --framework ${{ inputs.framework }} --configuration Release --verbosity normal --logger GitHubActions  /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:SkipAutoProps=true
+        run: dotnet test ClickHouse.Driver.Tests/ClickHouse.Driver.Tests.csproj --framework ${{ inputs.framework }} --configuration Release --verbosity normal --logger GitHubActions  /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:SkipAutoProps=true
         env:
           CLICKHOUSE_CONNECTION: Host=localhost;Port=8123;Username=test;Password=test1234
           CLICKHOUSE_VERSION: ${{ inputs.clickhouse-version }}
@@ -63,4 +63,4 @@ jobs:
         with:
           fail_ci_if_error: true
           disable_search: true
-          files: ./ClickHouse.Client.Tests/coverage.${{ inputs.framework }}.opencover.xml
+          files: ./ClickHouse.Driver.Tests/coverage.${{ inputs.framework }}.opencover.xml

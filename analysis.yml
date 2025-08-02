@@ -27,7 +27,7 @@ jobs:
       uses: dotnet/code-analysis@main
       id: code-analysis
       with:
-        project: ClickHouse.Client\ClickHouse.Client.csproj
+        project: ClickHouse.Driver\ClickHouse.Driver.csproj
         build-breaking: false
         all-categories: all
 

@@ -1,5 +1,5 @@
 ignore:
-- ClickHouse.Client/Properties/Resources.Designer.cs
+- ClickHouse.Driver/Properties/Resources.Designer.cs
 codecov:
  token: 695f26ab-d29e-41c9-b9b3-8b510cc60cbe
 coverage:

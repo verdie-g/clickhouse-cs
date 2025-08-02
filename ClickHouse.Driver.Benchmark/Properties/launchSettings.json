@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ClickHouse.Driver.Benchmark": {
+      "commandName": "Project",
+      "commandLineArgs": "--filter \"*\" --inProcess --job Short --join"
+    }
+  }
+}
