@@ -6,6 +6,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/ClickHouse/clickhouse-cs</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ClickHouse/clickhouse-cs</RepositoryUrl>
+    <PackageIcon>icon.png</PackageIcon>
     <PackageTags>clickhouse;click;house;database;ado;ado.net;http;client</PackageTags>
     <Authors>ClickHouse</Authors>
     <Description>Fast binary-over-HTTP ADO.NET provider for ClickHouse</Description>
@@ -53,6 +54,10 @@
 
   <ItemGroup>
     <AdditionalFiles Include="PublicAPI\net8.0\PublicAPI.Shipped.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
