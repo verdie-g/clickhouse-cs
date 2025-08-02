@@ -51,8 +51,7 @@ public class ConnectionTests : AbstractConnectionTestFixture
     public void ShouldConnectToServer()
     {
         using var connection = TestUtilities.GetTestClickHouseConnection();
-        connection.Open();
-        ClassicAssert.IsNotEmpty(connection.ServerVersion);
+                ClassicAssert.IsNotEmpty(connection.ServerVersion);
         Assert.That(connection.State, Is.EqualTo(ConnectionState.Open));
         connection.Close();
         Assert.That(connection.State, Is.EqualTo(ConnectionState.Closed));
