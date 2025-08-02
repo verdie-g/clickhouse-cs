@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net462;net48;netstandard2.1;net6.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>net462;net48;netstandard2.1;net6.0;net8.0;net9.0</TargetFrameworks>
     <CheckEolTargetFramework>false</CheckEolTargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/ClickHouse/clickhouse-cs</PackageProjectUrl>
     <RepositoryUrl>https://github.com/ClickHouse/clickhouse-cs</RepositoryUrl>
     <PackageTags>clickhouse;click;house;database;ado;ado.net;http;client</PackageTags>
-    <Authors>ClickHouse;Oleg Kozlyuk</Authors>
+    <Authors>ClickHouse</Authors>
     <Description>Fast binary-over-HTTP ADO.NET provider for ClickHouse</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
