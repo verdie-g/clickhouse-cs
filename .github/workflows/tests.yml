@@ -45,7 +45,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        framework: ["net9.0", "net6.0"]
+        framework: ["net8.0", "net6.0"]
 
   integration:
     name: Integration Tests
