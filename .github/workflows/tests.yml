@@ -21,8 +21,8 @@ jobs:
   regress-clickhouse:
     name: ClickHouse regression
     uses: ./.github/workflows/reusable.yml
-    needs:
-      - coverage
+    # needs:
+    #   - coverage
     with:
       clickhouse-version: ${{ matrix.version }}
     strategy:
@@ -40,8 +40,8 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       framework: ${{ matrix.framework }}
-    needs:
-      - coverage
+    # needs:
+    #   - coverage
     strategy:
       fail-fast: false
       matrix:
@@ -51,8 +51,8 @@ jobs:
     name: Integration Tests
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs:
-      - coverage
+    # needs:
+    #   - coverage
 
     services:
       clickhouse:
