@@ -52,6 +52,7 @@ jobs:
             3.1.x
             5.x
             8.x
+            9.x
 
       - name: Test
         run: dotnet test ClickHouse.Driver.Tests/ClickHouse.Driver.Tests.csproj --framework ${{ inputs.framework }} --configuration Release --verbosity normal --logger GitHubActions  /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:SkipAutoProps=true
