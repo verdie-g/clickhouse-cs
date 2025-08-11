@@ -66,9 +66,3 @@ jobs:
           fail_ci_if_error: true
           disable_search: true
           files: ./ClickHouse.Driver.Tests/coverage.${{ inputs.framework }}.opencover.xml
-          ignore:
-          - ClickHouse.Driver/Properties/Resources.Designer.cs
-          coverage:
-            precision: 2
-            round: down
-            range: "80...100"
