@@ -1,6 +1,0 @@
-ignore:
-- ClickHouse.Driver/Properties/Resources.Designer.cs
-coverage:
-  precision: 2
-  round: down
-  range: "80...100"
