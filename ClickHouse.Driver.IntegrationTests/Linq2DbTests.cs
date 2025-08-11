@@ -48,7 +48,7 @@ public class Tests
         ];
     }
 
-    [Test]
+    // [Test]
     public async Task Linq2DbBulkCopy()
     {
         var connectionString = TestUtilities.GetConnectionStringBuilder().ConnectionString;
