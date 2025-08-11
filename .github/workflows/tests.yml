@@ -14,7 +14,6 @@ jobs:
     uses: ./.github/workflows/reusable.yml
     with:
       coverage: true
-      token: ${{ secrets.CODECOV_TOKEN }}
     permissions:
       statuses: write
 
