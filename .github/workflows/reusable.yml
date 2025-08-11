@@ -61,8 +61,9 @@ jobs:
           CLICKHOUSE_VERSION: ${{ inputs.clickhouse-version }}
 
       - uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
         with:
-          token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
           disable_search: true
           verbose: true
