@@ -64,5 +64,5 @@ jobs:
         commit: ${{ github.sha }}
         tag: ${{ inputs.version }}
         generateReleaseNotes: true
-        draft: true
+        draft: false
         prerelease: false
