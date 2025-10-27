@@ -49,7 +49,7 @@ public class SqlParameterizedSelectWithFormDataTests
         command.AddParameter("var", value);
 
         var result = (await command.ExecuteReaderAsync()).GetEnsureSingleRow();
-        Assert.That(result[1], Is.EqualTo(result[0]).UsingPropertiesComparer());
+        TestUtilities.AssertEqual(result[1], result[0]);
 
         if (value is null || value is DBNull)
         {
