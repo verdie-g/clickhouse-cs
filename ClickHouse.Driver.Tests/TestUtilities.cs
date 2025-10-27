@@ -9,6 +9,7 @@ using ClickHouse.Driver.ADO;
 using ClickHouse.Driver.Numerics;
 using ClickHouse.Driver.Utility;
 using System.Text.Json.Nodes;
+using NUnit.Framework.Constraints;
 
 namespace ClickHouse.Driver.Tests;
 
@@ -29,6 +30,24 @@ public static class TestUtilities
         {
             SupportedFeatures = Feature.All;
             ServerVersion = null;
+        }
+    }
+    
+    /// <summary>
+    /// Equality assertion with special handling for JsonObjects
+    /// </summary>
+    /// <param name="expected"></param>
+    /// <param name="result"></param>
+    public static void AssertEqual(object expected, object result)
+    {
+        if (expected is JsonNode)
+        {
+            // Necessary because the ordering of the fields is not guaranteed to be the same
+            Assert.That(result, Is.EqualTo(expected).Using<JsonObject,JsonObject>(JsonNode.DeepEquals));
+        }
+        else
+        {
+            Assert.That(result, Is.EqualTo(expected).UsingPropertiesComparer());
         }
     }
 
@@ -255,7 +274,7 @@ public static class TestUtilities
                 "{\"val\": 1}",
                 "{\"val\": 1.5}",
                 "{\"val\": [1,2]}",
-                "{ \"nested\": { \"double\": 1.25, \"int\": 123456, \"string\": \"stringValue\" } }",
+                "{ \"nested\": { \"double\": 1.25, \"int\": 123456, \"string\": \"stringValue\", \"int2\": 54321 } }",
                 "{ \"nestedArray\": [{\"val\": 1}, {\"val\": 2}] }",
             };
 

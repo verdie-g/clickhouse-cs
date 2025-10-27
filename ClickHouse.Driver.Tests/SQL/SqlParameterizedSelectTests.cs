@@ -47,7 +47,7 @@ public class SqlParameterizedSelectTests : IDisposable
         command.AddParameter("var", value);
 
         var result = (await command.ExecuteReaderAsync()).GetEnsureSingleRow();
-        Assert.That(result[1], Is.EqualTo(result[0]).UsingPropertiesComparer());
+        TestUtilities.AssertEqual(result[0], result[1]);
 
         if (value is null || value is DBNull)
         {
@@ -75,7 +75,7 @@ public class SqlParameterizedSelectTests : IDisposable
         command.AddParameter("var", clickHouseType, value);
 
         var result = (await command.ExecuteReaderAsync()).GetEnsureSingleRow().Single();
-        Assert.That(result, Is.EqualTo(value).UsingPropertiesComparer());
+        TestUtilities.AssertEqual(result, value);
     }
 
     [Test]
@@ -94,7 +94,7 @@ public class SqlParameterizedSelectTests : IDisposable
         command.AddParameter("var", clickHouseType, value);
 
         var result = (await command.ExecuteReaderAsync()).GetEnsureSingleRow();
-        Assert.That(result[0], Is.EqualTo(result[1]).UsingPropertiesComparer());
+        TestUtilities.AssertEqual(result[0], result[1]);
 
         if (value is null || value is DBNull)
         {
