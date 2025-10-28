@@ -41,6 +41,12 @@ Coming soon
 
 <!--- We have a wide range of [examples](./examples), aiming to cover various scenarios of client usage. The overview is available in the [examples README](https://github.com/ClickHouse/clickhouse-js/blob/main/examples/README.md#overview). -->
 
+## ClickHouse Versions
+
+The supported versions ofthe ClickHouse database server coincide with the versions currently receiving security updates.
+
+For the list of currently supported versions, see https://github.com/ClickHouse/ClickHouse/blob/master/SECURITY.md#security-change-log-and-support.
+
 ## Contact us
 
 If you have any questions or need help, feel free to reach out to us in the [Community Slack](https://clickhouse.com/slack) or via [GitHub issues](https://github.com/ClickHouse/clickhouse-cs/issues).
