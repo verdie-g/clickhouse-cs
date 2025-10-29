@@ -24,7 +24,7 @@
 
 ## About
 
-Official C#/ADO.NET client for ClickHouse [ClickHouse](https://clickhouse.com/).
+Official C#/ADO.NET client for [ClickHouse](https://clickhouse.com/).
 
  * High performance
  * Supports bulk insertion
@@ -39,13 +39,13 @@ See the [ClickHouse website](https://clickhouse.com/docs/integrations/csharp) fo
 
 Coming soon
 
-<!--- We have a wide range of [examples](./examples), aiming to cover various scenarios of client usage. The overview is available in the [examples README](https://github.com/ClickHouse/clickhouse-js/blob/main/examples/README.md#overview). -->
+<!--- We have a wide range of [examples](./examples), aiming to cover various scenarios of client usage. The overview is available in the [examples README](https://github.com/ClickHouse/clickhouse-cs/blob/main/examples/README.md#overview). -->
 
 ## ClickHouse Versions
 
 The supported versions ofthe ClickHouse database server coincide with the versions currently receiving security updates.
 
-For the list of currently supported versions, see https://github.com/ClickHouse/ClickHouse/blob/master/SECURITY.md#security-change-log-and-support.
+For the list of currently supported versions, see [here](https://github.com/ClickHouse/ClickHouse/blob/master/SECURITY.md#security-change-log-and-support).
 
 ## Contact us
 
