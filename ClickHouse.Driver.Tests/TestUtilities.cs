@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -34,7 +34,7 @@ public static class TestUtilities
     }
     
     /// <summary>
-    /// Equality assertion with special handling for JsonObjects
+    /// Equality assertion with special handling for certain object types
     /// </summary>
     /// <param name="expected"></param>
     /// <param name="result"></param>

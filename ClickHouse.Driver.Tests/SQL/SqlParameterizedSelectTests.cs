@@ -32,11 +32,6 @@ public class SqlParameterizedSelectTests : IDisposable
     [TestCaseSource(typeof(SqlParameterizedSelectTests), nameof(TypedQueryParameters))]
     public async Task ShouldExecuteParameterizedCompareWithTypeDetection(string exampleExpression, string clickHouseType, object value)
     {
-        // https://github.com/ClickHouse/ClickHouse/issues/33928
-        // TODO: remove
-        if (connection.ServerVersion.StartsWith("22.1.") && clickHouseType == "IPv6")
-            Assert.Ignore("IPv6 is broken in ClickHouse 22.1.2.2");
-
         if (clickHouseType.StartsWith("DateTime64") || clickHouseType == "Date" || clickHouseType == "Date32")
             Assert.Pass("Automatic type detection does not work for " + clickHouseType);
         if (clickHouseType.StartsWith("Enum"))
@@ -63,11 +58,6 @@ public class SqlParameterizedSelectTests : IDisposable
     [TestCaseSource(typeof(SqlParameterizedSelectTests), nameof(TypedQueryParameters))]
     public async Task ShouldExecuteParameterizedSelectWithExplicitType(string _, string clickHouseType, object value)
     {
-        // https://github.com/ClickHouse/ClickHouse/issues/33928
-        // TODO: remove
-        if (connection.ServerVersion.StartsWith("22.1.") && clickHouseType == "IPv6")
-            Assert.Ignore("IPv6 is broken in ClickHouse 22.1.2.2");
-
         if (clickHouseType.StartsWith("Enum"))
             clickHouseType = "String";
         using var command = connection.CreateCommand();
@@ -82,11 +72,6 @@ public class SqlParameterizedSelectTests : IDisposable
     [TestCaseSource(typeof(SqlParameterizedSelectTests), nameof(TypedQueryParameters))]
     public async Task ShouldExecuteParameterizedCompareWithExplicitType(string exampleExpression, string clickHouseType, object value)
     {
-        // https://github.com/ClickHouse/ClickHouse/issues/33928
-        // TODO: remove
-        if (connection.ServerVersion.StartsWith("22.1.") && clickHouseType == "IPv6")
-            Assert.Ignore("IPv6 is broken in ClickHouse 22.1.2.2");
-
         if (clickHouseType.StartsWith("Enum"))
             clickHouseType = "String";
         using var command = connection.CreateCommand();
