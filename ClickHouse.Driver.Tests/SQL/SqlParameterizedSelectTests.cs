@@ -11,6 +11,7 @@ namespace ClickHouse.Driver.Tests.SQL;
 
 [TestFixture(true)]
 [TestFixture(false)]
+[DefaultFloatingPointTolerance(0.0000000000000001)]
 public class SqlParameterizedSelectTests : IDisposable
 {
     private readonly ClickHouseConnection connection;
