@@ -11,7 +11,7 @@ namespace ClickHouse.Driver.Tests.SQL;
 
 [TestFixture(true)]
 [TestFixture(false)]
-[DefaultFloatingPointTolerance(0.000000000000001)]
+[DefaultFloatingPointTolerance(0.0000000000000001)]
 public class SqlParameterizedSelectTests : IDisposable
 {
     private readonly ClickHouseConnection connection;
@@ -43,26 +43,6 @@ public class SqlParameterizedSelectTests : IDisposable
         command.AddParameter("var", value);
 
         var result = (await command.ExecuteReaderAsync()).GetEnsureSingleRow();
-
-        if (clickHouseType == "Ring")
-        {
-            Console.WriteLine($"result[0] type: {result[0]?.GetType()}");
-            Console.WriteLine($"result[1] type: {result[1]?.GetType()}");
-            Console.WriteLine($"result[0]: {result[0]}");
-            Console.WriteLine($"result[1]: {result[1]}");
-            Console.WriteLine($"ReferenceEquals: {ReferenceEquals(result[0], result[1])}");
-            
-            if (result[0] is Array arr0 && result[1] is Array arr1)
-            {
-                for (int i = 0; i < arr0.Length; i++)
-                {
-                    var item0 = arr0.GetValue(i);
-                    var item1 = arr1.GetValue(i);
-                    Console.WriteLine($"  [{i}] {item0} == {item1}: {Equals(item0, item1)}");
-                }
-            }
-        }
-
         TestUtilities.AssertEqual(result[0], result[1]);
 
         if (value is null || value is DBNull)

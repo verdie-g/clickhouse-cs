@@ -11,6 +11,7 @@ using NUnit.Framework;
 
 [TestFixture(true)]
 [TestFixture(false)]
+[DefaultFloatingPointTolerance(0.0000000000000001)]
 public class SqlParameterizedSelectWithFormDataTests
 {
     private readonly ClickHouseConnection connection;
@@ -34,11 +35,6 @@ public class SqlParameterizedSelectWithFormDataTests
     [TestCaseSource(typeof(SqlParameterizedSelectTests), nameof(TypedQueryParameters))]
     public async Task ShouldExecuteParameterizedCompareWithTypeDetection(string exampleExpression, string clickHouseType, object value)
     {
-        // https://github.com/ClickHouse/ClickHouse/issues/33928
-        // TODO: remove
-        if (connection.ServerVersion.StartsWith("22.1.") && clickHouseType == "IPv6")
-            Assert.Ignore("IPv6 is broken in ClickHouse 22.1.2.2");
-
         if (clickHouseType.StartsWith("DateTime64") || clickHouseType == "Date" || clickHouseType == "Date32")
             Assert.Pass("Automatic type detection does not work for " + clickHouseType);
         if (clickHouseType.StartsWith("Enum"))
