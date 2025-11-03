@@ -43,7 +43,6 @@ public class SqlParameterizedSelectTests : IDisposable
         command.AddParameter("var", value);
 
         var result = (await command.ExecuteReaderAsync()).GetEnsureSingleRow();
-        TestUtilities.AssertEqual(result[0], result[1]);
 
         if (clickHouseType == "Ring")
         {
@@ -63,6 +62,8 @@ public class SqlParameterizedSelectTests : IDisposable
                 }
             }
         }
+
+        TestUtilities.AssertEqual(result[0], result[1]);
 
         if (value is null || value is DBNull)
         {
