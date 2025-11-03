@@ -215,14 +215,14 @@ internal static class TypeConverter
         var node = Parser.Parse(type);
         return ParseClickHouseType(node, settings);
     }
-    
+
     internal static string ExtractTypeName(SyntaxTreeNode node)
     {
         var typeName = node.Value.Trim().Trim('\'');
-        
+
         if (Aliases.TryGetValue(typeName.ToUpperInvariant(), out var alias))
             typeName = alias;
-        
+
         if (typeName.Contains(' '))
         {
             var parts = typeName.Split(Separator, 2, StringSplitOptions.RemoveEmptyEntries);
@@ -235,7 +235,7 @@ internal static class TypeConverter
                 throw new ArgumentException($"Cannot parse {node.Value} as type", nameof(node));
             }
         }
-        
+
         return typeName;
     }
 
