@@ -12,10 +12,16 @@ internal class EnumType : ParameterizedType
     private readonly Dictionary<string, int> values;
     private readonly Dictionary<int, string> reverseValues;
 
+    public EnumType()
+    {
+        values = new();
+        reverseValues = new();
+    }
+
     public EnumType(Dictionary<string, int> values)
     {
         this.values = values;
-        this.reverseValues = new Dictionary<int, string>(values.Count);
+        reverseValues = new Dictionary<int, string>(values.Count);
         foreach (var kvp in values)
         {
             reverseValues[kvp.Value] = kvp.Key;

@@ -7,7 +7,10 @@ namespace ClickHouse.Driver.Types;
 
 internal class Enum16Type : EnumType
 {
-    public Enum16Type(Dictionary<string, int> values) : base(values) { }
+    public Enum16Type() { }
+
+    public Enum16Type(Dictionary<string, int> values)
+        : base(values) { }
 
     public override string Name => "Enum16";
 

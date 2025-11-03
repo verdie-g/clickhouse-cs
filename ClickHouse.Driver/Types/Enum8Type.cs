@@ -7,7 +7,10 @@ namespace ClickHouse.Driver.Types;
 
 internal class Enum8Type : EnumType
 {
-    public Enum8Type(Dictionary<string, int> values) : base(values) { }
+    public Enum8Type() { }
+
+    public Enum8Type(Dictionary<string, int> values)
+        : base(values) { }
 
     public override string Name => "Enum8";
 
