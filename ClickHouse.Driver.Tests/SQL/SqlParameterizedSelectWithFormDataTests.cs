@@ -11,7 +11,6 @@ using NUnit.Framework;
 
 [TestFixture(true)]
 [TestFixture(false)]
-[DefaultFloatingPointTolerance(0.0000000000000001)]
 public class SqlParameterizedSelectWithFormDataTests
 {
     private readonly ClickHouseConnection connection;
