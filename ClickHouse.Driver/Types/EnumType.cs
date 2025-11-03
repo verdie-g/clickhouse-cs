@@ -22,7 +22,9 @@ internal class EnumType : ParameterizedType
             .Select(p => p.Split('='))
             .ToDictionary(kvp => kvp[0].Trim().Trim('\''), kvp => Convert.ToInt32(kvp[1].Trim(), CultureInfo.InvariantCulture));
 
-        switch (node.Value)
+        string typeName = TypeConverter.ExtractTypeName(node);
+
+        switch (typeName)
         {
             case "Enum":
             case "Enum8":

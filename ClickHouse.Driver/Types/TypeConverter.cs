@@ -216,7 +216,7 @@ internal static class TypeConverter
         return ParseClickHouseType(node, settings);
     }
 
-    internal static ClickHouseType ParseClickHouseType(SyntaxTreeNode node, TypeSettings settings)
+    internal static string ExtractTypeName(SyntaxTreeNode node)
     {
         var typeName = node.Value.Trim().Trim('\'');
 
@@ -235,6 +235,13 @@ internal static class TypeConverter
                 throw new ArgumentException($"Cannot parse {node.Value} as type", nameof(node));
             }
         }
+
+        return typeName;
+    }
+
+    internal static ClickHouseType ParseClickHouseType(SyntaxTreeNode node, TypeSettings settings)
+    {
+        var typeName = ExtractTypeName(node);
 
         if (node.ChildNodes.Count == 0 && SimpleTypes.TryGetValue(typeName, out var typeInfo))
         {
