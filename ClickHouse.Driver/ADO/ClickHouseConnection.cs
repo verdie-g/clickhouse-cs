@@ -52,8 +52,13 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
         : this(string.Empty)
     {
     }
+    
+    public ClickHouseConnection(string connectionString)
+    {
+        ConnectionString = connectionString;
+    }
 
-    public ClickHouseConnection(string connectionString, bool skipServerCertificateValidation = false)
+    public ClickHouseConnection(string connectionString, bool skipServerCertificateValidation)
     {
         SkipServerCertificateValidation = skipServerCertificateValidation;
         ConnectionString = connectionString;
