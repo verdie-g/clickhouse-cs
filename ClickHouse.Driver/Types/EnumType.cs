@@ -18,7 +18,7 @@ internal class EnumType : ParameterizedType
         reverseValues = new();
     }
 
-    public EnumType(Dictionary<string, int> values)
+    protected EnumType(Dictionary<string, int> values)
     {
         this.values = values;
         reverseValues = new Dictionary<int, string>(values.Count);
