@@ -110,6 +110,6 @@ jobs:
         run: dotnet test ClickHouse.Driver.Tests/ClickHouse.Driver.Tests.csproj 
               --framework net9.0 --configuration Release --verbosity normal --logger GitHubActions 
               /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:SkipAutoProps=true
-              --filter "FullyQualifiedName ~ ADO"
         env:
           CLICKHOUSE_CONNECTION: Host=${{ secrets.CLICKHOUSE_CLOUD_HOST }};Port=8443;User=${{ secrets.CLICKHOUSE_CLOUD_USER }};Password=${{ secrets.CLICKHOUSE_CLOUD_PASSWORD }};Protocol=https
+          
