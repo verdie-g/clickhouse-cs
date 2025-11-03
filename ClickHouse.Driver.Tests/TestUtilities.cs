@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Linq;
@@ -34,7 +34,7 @@ public static class TestUtilities
     }
     
     /// <summary>
-    /// Equality assertion with special handling for JsonObjects
+    /// Equality assertion with special handling for certain object types
     /// </summary>
     /// <param name="expected"></param>
     /// <param name="result"></param>
@@ -44,6 +44,11 @@ public static class TestUtilities
         {
             // Necessary because the ordering of the fields is not guaranteed to be the same
             Assert.That(result, Is.EqualTo(expected).Using<JsonObject,JsonObject>(JsonNode.DeepEquals));
+        }
+        else if (expected is double or float)
+        {
+            // x64 vs ARM can result in floating point handling differences which break tests, so we test floating point nums with an error tolerance
+            Assert.That(result, Is.EqualTo(expected).UsingPropertiesComparer().Within(1).Ulps);
         }
         else
         {
