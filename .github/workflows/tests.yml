@@ -92,22 +92,11 @@ jobs:
 
   windows:
     name: Windows Tests
-    if: false
     runs-on: windows-latest
     timeout-minutes: 15
     steps:
-      - uses: Vampire/setup-wsl@v5
-
       - name: Checkout
         uses: actions/checkout@v4
-
-      - shell: wsl-bash -u root {0}
-        run: |
-          sudo apt update
-          sudo apt upgrade -y
-          sudo apt install curl -y
-          curl https://clickhouse.com/ | sh
-          ./clickhouse server --daemon
 
       - uses: actions/cache@v4
         name: Cache NuGet
@@ -119,8 +108,9 @@ jobs:
 
       - name: Test
         run: dotnet test ClickHouse.Driver.Tests/ClickHouse.Driver.Tests.csproj 
-              --framework net48 --configuration Release --verbosity normal --logger GitHubActions 
+              --framework net9.0 --configuration Release --verbosity normal --logger GitHubActions 
               /clp:ErrorsOnly /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:SkipAutoProps=true
               --filter "FullyQualifiedName ~ ADO"
         env:
-          CLICKHOUSE_CONNECTION: Host=localhost;Port=8123;Username=default
+          CLICKHOUSE_CONNECTION: Host=${{ secrets.INTEGRATIONS_TEAM_TESTS_CLOUD_HOST_SMT }};Port=8123;Password=${{ secrets.INTEGRATIONS_TEAM_TESTS_CLOUD_PASSWORD_SMT }}
+          CLICKHOUSE_JWT: ${{ secrets.INTEGRATIONS_TEAM_TESTS_CLOUD_JWT_DESERT_VM_43 }}
