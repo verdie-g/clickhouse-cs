@@ -52,7 +52,7 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
         : this(string.Empty)
     {
     }
-    
+
     public ClickHouseConnection(string connectionString)
     {
         ConnectionString = connectionString;

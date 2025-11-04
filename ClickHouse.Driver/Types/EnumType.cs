@@ -32,7 +32,6 @@ internal class EnumType : ParameterizedType
 
     public override Type FrameworkType => typeof(string);
 
-
     public override ParameterizedType Parse(SyntaxTreeNode node, Func<SyntaxTreeNode, ClickHouseType> parseClickHouseTypeFunc, TypeSettings settings)
     {
         var parameters = node.ChildNodes
