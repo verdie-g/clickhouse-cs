@@ -70,7 +70,7 @@ jobs:
       run: >
         Invoke-WebRequest
         https://one.digicert.com/signingmanager/api-ui/v1/releases/Keylockertools-windows-x64.msi/download
-        -H @{"x-api-key" = $env:SM_API_KEY}
+        -Headers @{"x-api-key" = $env:SM_API_KEY}
         -o Keylockertools-windows-x64.msi
 
     - name: Install Keylocker tools
