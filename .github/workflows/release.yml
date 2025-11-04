@@ -37,7 +37,6 @@ jobs:
     needs: [build]
     steps:
     - name: Create directories
-      working-directory: ${{ github.workspace }}
       run: |
         New-Item ${{ github.workspace }}\run -ItemType directory
         New-Item ${{ github.workspace }}\package -ItemType directory
@@ -71,7 +70,7 @@ jobs:
         Invoke-WebRequest
         https://one.digicert.com/signingmanager/api-ui/v1/releases/Keylockertools-windows-x64.msi/download
         -Headers @{"x-api-key" = $env:SM_API_KEY}
-        -o Keylockertools-windows-x64.msi
+        -OutFile Keylockertools-windows-x64.msi
 
     - name: Install Keylocker tools
       run: |
