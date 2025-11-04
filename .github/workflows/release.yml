@@ -39,8 +39,8 @@ jobs:
     - name: Create directories
       working-directory: ${{ github.workspace }}
       run: |
-        new-item ${{ github.workspace }}\run -itemtype directory
-        new-item ${{ github.workspace }}\package -itemtype directory
+        New-Item ${{ github.workspace }}\run -ItemType directory
+        New-Item ${{ github.workspace }}\package -ItemType directory
 
     - name: Download unsigned package
       uses: actions/download-artifact@v4
