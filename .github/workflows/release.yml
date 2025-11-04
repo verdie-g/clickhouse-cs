@@ -124,7 +124,6 @@ jobs:
   push_nuget_org:
     runs-on: windows-latest
     needs: [sign]
-    if: false
     name: Upload to NuGet.org
     steps:
     - name: Download Artifact
@@ -140,7 +139,6 @@ jobs:
   github_release:
     runs-on: ubuntu-latest
     needs: [sign]
-    if: false
     name: Create GitHub release
     permissions:
       contents: write
