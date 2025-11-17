@@ -262,6 +262,7 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
             activity.SetSuccess();
             return response;
         }
+
         var error = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
         var ex = ClickHouseServerException.FromServerResponse(error, query);
         activity.SetException(ex);
@@ -334,11 +335,12 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
     /// <param name="data">Raw stream to be sent. May contain SQL query at the beginning. May be gzip-compressed</param>
     /// <param name="isCompressed">indicates whether "Content-Encoding: gzip" header should be added</param>
     /// <param name="token">Cancellation token</param>
+    /// <param name="queryId">Query id</param>
     /// <returns>Task-wrapped HttpResponseMessage object</returns>
-    public async Task PostStreamAsync(string sql, Stream data, bool isCompressed, CancellationToken token)
+    public async Task<HttpResponseMessage> PostStreamAsync(string sql, Stream data, bool isCompressed, CancellationToken token, string queryId = null)
     {
         var content = new StreamContent(data);
-        await PostStreamAsync(sql, content, isCompressed, token).ConfigureAwait(false);
+        return await PostStreamAsync(sql, content, isCompressed, queryId, token).ConfigureAwait(false);
     }
 
     /// <summary>
@@ -349,19 +351,22 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
     /// <param name="callback">Callback invoked to write to the stream. May contain SQL query at the beginning. May be gzip-compressed</param>
     /// <param name="isCompressed">indicates whether "Content-Encoding: gzip" header should be added</param>
     /// <param name="token">Cancellation token</param>
+    /// <param name="queryId">Query id</param>
     /// <returns>Task-wrapped HttpResponseMessage object</returns>
-    public async Task PostStreamAsync(string sql, Func<Stream, CancellationToken, Task> callback, bool isCompressed, CancellationToken token)
+    public async Task<HttpResponseMessage> PostStreamAsync(string sql, Func<Stream, CancellationToken, Task> callback, bool isCompressed, CancellationToken token, string queryId = null)
     {
         var content = new StreamCallbackContent(callback, token);
-        await PostStreamAsync(sql, content, isCompressed, token).ConfigureAwait(false);
+        return await PostStreamAsync(sql, content, isCompressed, queryId, token).ConfigureAwait(false);
     }
 
-    private async Task PostStreamAsync(string sql, HttpContent content, bool isCompressed, CancellationToken token)
+    private async Task<HttpResponseMessage> PostStreamAsync(string sql, HttpContent content, bool isCompressed, string queryId, CancellationToken token)
     {
         using var activity = this.StartActivity("PostStreamAsync");
         activity.SetQuery(sql);
 
         var builder = CreateUriBuilder(sql);
+        builder.QueryId = queryId;
+
         using var postMessage = new HttpRequestMessage(HttpMethod.Post, builder.ToString());
         AddDefaultHttpHeaders(postMessage.Headers);
 
@@ -372,7 +377,7 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
             postMessage.Content.Headers.Add("Content-Encoding", "gzip");
         }
         using var response = await HttpClient.SendAsync(postMessage, HttpCompletionOption.ResponseContentRead, token).ConfigureAwait(false);
-        await HandleError(response, sql, activity).ConfigureAwait(false);
+        return await HandleError(response, sql, activity).ConfigureAwait(false);
     }
 
     public new ClickHouseCommand CreateCommand() => new ClickHouseCommand(this);
@@ -430,6 +435,15 @@ public class ClickHouseConnection : DbConnection, IClickHouseConnection, IClonea
             headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
             headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("deflate"));
         }
+    }
+
+    internal static string ExtractQueryId(HttpResponseMessage response)
+    {
+        const string queryIdHeader = "X-ClickHouse-Query-Id";
+        if (response.Headers.Contains(queryIdHeader))
+            return response.Headers.GetValues(queryIdHeader).FirstOrDefault();
+        else
+            return null;
     }
 
     internal ClickHouseConnectionStringBuilder ConnectionStringBuilder => ClickHouseConnectionStringBuilder.FromSettings(Settings);
