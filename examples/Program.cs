@@ -63,9 +63,18 @@ class Program
             Console.WriteLine($"\n\nRunning: {nameof(SelectWithParameterBinding)}");
             await SelectWithParameterBinding.Run();
             WaitForUser(isInteractive);
-            
-            Console.WriteLine($"\n\nRunning: {nameof(LoggingConfiguration)}");
+
+            // Troubleshooting
+            Console.WriteLine("\n\n" + new string('=', 70));
+            Console.WriteLine("TROUBLESHOOTING");
+            Console.WriteLine(new string('=', 70) + "\n");
+
+            Console.WriteLine($"Running: {nameof(LoggingConfiguration)}");
             await LoggingConfiguration.Run();
+            WaitForUser(isInteractive);
+
+            Console.WriteLine($"\n\nRunning: {nameof(NetworkTracing)}");
+            await NetworkTracing.Run();
             WaitForUser(isInteractive);
 
             Console.WriteLine("\n\n" + new string('=', 70));
