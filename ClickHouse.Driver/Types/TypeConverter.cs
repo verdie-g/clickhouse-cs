@@ -79,7 +79,6 @@ internal static class TypeConverter
         { "SMALLINT SIGNED", "Int16" },
         { "SMALLINT UNSIGNED", "UInt16" },
         { "TEXT", "String" },
-        { "TIME", "Int64" },
         { "TIMESTAMP", "DateTime" },
         { "TINYBLOB", "String" },
         { "TINYINT", "Int8" },
@@ -143,6 +142,8 @@ internal static class TypeConverter
         RegisterParameterizedType<DateTimeType>();
         RegisterParameterizedType<DateTime32Type>();
         RegisterParameterizedType<DateTime64Type>();
+        RegisterPlainType<TimeType>();
+        RegisterParameterizedType<Time64Type>();
 
         // Special 'nothing' type
         RegisterPlainType<NothingType>();
@@ -186,6 +187,10 @@ internal static class TypeConverter
 #endif
         ReverseMapping[typeof(DateTime)] = new DateTimeType();
         ReverseMapping[typeof(DateTimeOffset)] = new DateTimeType();
+        ReverseMapping[typeof(TimeSpan)] = new Time64Type
+        {
+            Scale = 7, // Matches precision of TimeSpan
+        };
 
         ReverseMapping[typeof(DBNull)] = new NullableType() { UnderlyingType = new NothingType() };
         ReverseMapping[typeof(JsonObject)] = new JsonType();
@@ -362,6 +367,10 @@ internal static class TypeConverter
                 return new JsonType(); // TODO JSON settings
             case 0x31:
                 return new BFloat16Type();
+            case 0x32:
+                return new TimeType();
+            case 0x34:
+                return new Time64Type { Scale = reader.Read7BitEncodedInt() };
             default:
                 break;
         }
