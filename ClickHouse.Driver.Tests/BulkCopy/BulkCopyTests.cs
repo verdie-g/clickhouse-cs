@@ -31,6 +31,8 @@ public class BulkCopyTests : AbstractConnectionTestFixture
         yield return new TestCaseData("DateTime('Asia/Ashkhabad')", new DateTime(2020, 2, 20, 20, 20, 20, DateTimeKind.Unspecified));
         yield return new TestCaseData("FixedString(4)", "asdf");
         yield return new TestCaseData("FixedString(4)", new byte[] { 121, 122, 123, 124 }); // Test both formats for FixedString
+        yield return new TestCaseData("String", "asdf");
+        yield return new TestCaseData("String", new byte[] { 121, 122, 123, 124 }); // Test both formats for String
     }
 
     [Test]
