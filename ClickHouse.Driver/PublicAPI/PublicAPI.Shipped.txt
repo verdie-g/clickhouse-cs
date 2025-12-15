@@ -182,7 +182,6 @@ ClickHouse.Driver.Utility.CompressedContent
 ClickHouse.Driver.Utility.CompressedContent.CompressedContent(System.Net.Http.HttpContent content, System.Net.DecompressionMethods compressionMethod) -> void
 ClickHouse.Driver.Utility.ConnectionExtensions
 ClickHouse.Driver.Utility.DataReaderExtensions
-ClickHouse.Driver.Utility.MathUtils
 override ClickHouse.Driver.ADO.ClickHouseCommand.Cancel() -> void
 override ClickHouse.Driver.ADO.ClickHouseCommand.CommandText.get -> string
 override ClickHouse.Driver.ADO.ClickHouseCommand.CommandText.set -> void
@@ -326,8 +325,6 @@ static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteReaderAsync(this Sy
 static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteScalarAsync(this System.Data.Common.DbConnection connection, string sql) -> System.Threading.Tasks.Task<object>
 static ClickHouse.Driver.Utility.ConnectionExtensions.ExecuteStatementAsync(this System.Data.Common.DbConnection connection, string sql) -> System.Threading.Tasks.Task<int>
 static ClickHouse.Driver.Utility.DataReaderExtensions.GetColumnNames(this System.Data.IDataReader reader) -> string[]
-static ClickHouse.Driver.Utility.MathUtils.ShiftDecimalPlaces(long value, int places) -> long
-static ClickHouse.Driver.Utility.MathUtils.ToPower(int value, int power) -> long
 static readonly ClickHouse.Driver.Constraints.DBDefault.Value -> ClickHouse.Driver.Constraints.DBDefault
 virtual ClickHouse.Driver.ADO.ClickHouseConnection.SupportedFeatures.get -> ClickHouse.Driver.ADO.Feature
 virtual ClickHouse.Driver.ADO.Readers.ClickHouseDataReader.GetDateTimeOffset(int ordinal) -> System.DateTimeOffset
